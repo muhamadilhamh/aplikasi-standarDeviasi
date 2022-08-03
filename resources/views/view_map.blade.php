@@ -283,7 +283,7 @@
 </style>
 
 <script>
-	var data_Count = Object.values(JSON.parse('<?= json_encode($dataProvinsi) ?>'));
+	const data_Count = Object.values(JSON.parse('<?= json_encode($dataProvinsi) ?>'));
 
 	function dev(arr) {
 		// membuat nilai rata-rata dengan array.reduce
@@ -312,25 +312,26 @@
 	let average = (array) => array.reduce((a, b) => a + b) / array.length;
 	// console.log(average(data_Count));
 	const avg = average(data_Count);
+	
 
 	const n = parseFloat(prompt('Masukan nilai n untuk menampilkan sebaran kuliner tradisional: '));
 	
-	var x = (n * std);
-	var positif = (avg + x);
-	var negatif	= (avg - x);
+	const x = (n * std);
+	const positif = (avg + x);
+	const negatif	= (avg - x);
 	
 
-	var format_positif = math.round(positif);
-	var format_negatif = math.round(negatif);
+	const format_positif = math.round(positif);
+	const format_negatif = math.round(negatif);
 	
 
-	var PROVINSI = <?= json_encode($dataProvinsi) ?>;
+	const PROVINSI = <?= json_encode($dataProvinsi) ?>;
 
-	var map = L.map('map', {
+	const map = L.map('map', {
 		zoomControl: false,
 	}).setView([-3.35123, 118.0186], 5);
 
-	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+	const tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 6,
 		minZoom: 5,
 		id: 'mapbox/streets-v11',
@@ -351,7 +352,7 @@
 	@endforeach
 
 
-	var info = L.control();
+	const info = L.control();
 
 	info.onAdd = function(map) {
 		this._div = L.DomUtil.create('div', 'info');
@@ -364,6 +365,7 @@
 			'<b>' + props.nama_provinsi + '</b><br />' + 'x = ' + PROVINSI[props.kode] + ' Data ' : 'Dekatkan Mouse Anda Pada Peta' +
 			'<br/>' + 'Rata-rata mininimum (RRMin) =' + format_negatif +
 			'<br/>' + 'Rata-rata maksimum (RRMax) =' + format_positif +
+			'<br/>' + 'Standar Deviasi =' + std +
 			'<br/>' + 'x = Jumlah Data Kuliner Tiap Provinsi'
 		);
 	};
@@ -375,20 +377,20 @@
 			'#fbfe36';
 
 	}
-	var legend = L.control({
+	const legend = L.control({
 		position: 'bottomright'
 	});
 
 	legend.onAdd = function(map) {
 
-		var format2_negatif = ' < ' + format_negatif
-		var format2_positif = ' > ' + format_positif
-		var range = format_negatif + ' - ' + format_positif
-		var div = L.DomUtil.create('div', 'info legend');
-		var grades = [format2_negatif, range, format2_positif];
-		var labels = ['<strong>Keterangan: </strong>'];
+		const format2_negatif = ' < ' + format_negatif
+		const format2_positif = ' > ' + format_positif
+		const range = format_negatif + ' - ' + format_positif
+		const div = L.DomUtil.create('div', 'info legend');
+		const grades = [format2_negatif, range, format2_positif];
+		const labels = ['<strong>Keterangan: </strong>'];
 
-		for (var i = 0; i < grades.length; i++) {
+		for (const i = 0; i < grades.length; i++) {
 			if (i == 0) {
 				div.innerHTML +=
 					labels.push(
@@ -423,7 +425,7 @@
 	}
 
 	function highlightFeature(e) {
-		var layer = e.target;
+		const layer = e.target;
 
 		layer.setStyle({
 			weight: 5,
@@ -441,7 +443,7 @@
 
 
 	function resetHighlight(e) {
-		var layer = e.target;
+		const layer = e.target;
 
 		layer.setStyle({
 			weight: 2,
