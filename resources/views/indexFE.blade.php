@@ -7,20 +7,17 @@
     <title>SIG Kuliner Tradisional</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css')}}/bootstrap.css">
-    <link rel="stylesheet" href="{{asset('icon')}}/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{asset('css')}}/main.css">
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{asset('js')}}/bootstrap.bundle.min.js"></script>
-    <script src="{{asset('js')}}/mazer.js"></script>
+   
 
-    <!-- Leftleat -->
+  
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-    <link rel="stylesheet" href="{{asset('css')}}/L.Control.Sidebar.css" />
+    
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    <script src="{{asset('js')}}/L.Control.Sidebar.js"></script>
+  
 
-    <!-- Math js -->
+   
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.js'></script>
 
     <style>
