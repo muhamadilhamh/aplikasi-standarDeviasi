@@ -299,9 +299,6 @@
 		// menjumlahkan data pada array
 		let sum = arr.reduce((acc, curr) => acc + curr, 0);
 
-		// menghitung variansi
-		let variance = sum / arr.length
-
 		// mengembalikan nilai standar deviasi
 		return Math.sqrt(sum / ((arr.length) - 1))
 	}
